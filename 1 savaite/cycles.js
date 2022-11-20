@@ -191,7 +191,7 @@ console.groupCollapsed('For');
   console.groupEnd();
   console.groupCollapsed('23. Atspausdinkite <numbers> masyvo elementus nuo paskutinio iki pirmo');
   {
-    for (let i = numbers.length - 1; i >= 1; i--) 
+    for (let i = numbers.length -1; i >= 1; i--) 
       console.log(numbers[i]);
     
 
