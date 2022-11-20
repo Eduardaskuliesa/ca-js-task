@@ -42,8 +42,7 @@ console.groupCollapsed('4 - https://edabit.com/challenge/i6YqzHcSiPiEQKjeX');
         { tile: "A", score: 1 },
         { tile: "E", score: 1 }
     ]) 
-    let score = maximumScore.{score};
-    console.log(score)
+   
 }
 
 console.groupEnd();
