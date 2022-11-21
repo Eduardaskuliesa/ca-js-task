@@ -120,7 +120,14 @@ console.groupEnd();
 
 console.groupCollapsed('11. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indeksus vienoje eilutėje: 0 1 2 3 ...');
 {
-  
+  const masyvas = [-111, 2, -9, 48];
+  let aIndex = []
+  function printAll(masyvas){
+    for (let i = 0; i < masyvas.length; i++)
+    aIndex[i] = masyvas.indexOf(masyvas[i]);
+    console.log(aIndex.join(' '))
+  }
+  printAll(masyvas);
 }
 console.groupEnd();
 
@@ -140,14 +147,13 @@ console.groupEnd();
 console.groupCollapsed('13. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indekso ir reikšmių poras vienoje eilutėje, tokiu formatu:');
 //  [0]=>17 [1]=>8 [2]=>88 ..
 {
-  const masyvas = [-111, 2, -9, 48]
+  const masyvas = [-111, 2, -9, 48];
+  let aIndex = []
   function printAll(masyvas){
-    for(let i = 3; i < masyvas.length; i++){
-      let str = masyvas.join(' ');
-      let b = i - 3; 
-      console.log(b + str);
-    }
+    for (var i = 0; i < masyvas.length; i++)
+    aIndex[i] = masyvas.indexOf(masyvas[i]);
+    console.log(aIndex.join(' ') + masyvas)
   }
-  printAll(masyvas)
+  printAll(masyvas);
 }
 console.groupEnd();
