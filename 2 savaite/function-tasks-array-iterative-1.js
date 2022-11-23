@@ -135,8 +135,16 @@ console.groupEnd();
 
 console.groupCollapsed('10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį');
 {
-
+  let vyrai = 0;
+  let moterys = 0;
+  people.forEach((people) => {
+    if(people.sex === 'male' && people.hasCar === true) vyrai += 1;
+    else if(people.sex === 'female' && people.hasCar === true) moterys +=1
+  });  
+console.log('vyrai turi:' + vyrai  + 'moterys turi:' + moterys)
 }
+
+
 console.groupEnd();
 
 console.groupCollapsed('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"');
