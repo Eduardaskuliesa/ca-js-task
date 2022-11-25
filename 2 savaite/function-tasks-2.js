@@ -48,7 +48,7 @@ console.log('---');
       const resultArr = [];
       for (let i = 0; i < numbers.length; i += 1) {
         resultArr[i] = numbers[i] * i;
-        // result.push(arr[i] * i);
+        
       }
   
       return resultArr;

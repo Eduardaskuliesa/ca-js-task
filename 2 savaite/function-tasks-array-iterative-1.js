@@ -83,7 +83,7 @@ console.groupEnd();
 
 console.groupCollapsed('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą');
 {
-  // ...sprendimas ir spausdinimas
+  
 }
 console.groupEnd();
 
@@ -94,30 +94,29 @@ console.groupCollapsed('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, 
 console.groupEnd();
 
 console.groupCollapsed('6. Atspausdinkite visus vyrus');
-{
+
   function allMan(people){
-    if(people.sex === 'male')
-    console.log(people.name)
-  }
-  people.forEach(allMan);
+  const all = people.filter(people => people.sex === 'male')
+  return all;
 }
+console.log(allMan(people));
 console.groupEnd();
 
 console.groupCollapsed('7. Atspausdinkite visas moteris');
-{
+
   function allWoman(people){
-    if(people.sex === 'female')
-    console.log(people.name)
+    const all = people.filter(people => people.sex === 'female')
+    return all;
   }
-  people.forEach(allWoman);
-}
+  console.log(allWoman(people));
+
 console.groupEnd();
 
 console.groupCollapsed('8. Atspausdinkite žmonių vardus ir pavardes, kurie turi mašinas');
 {
   function allCars(people){
     if(people.hasCar === true)
-    console.log(people.name)
+    console.log(`${people.name}  ${people.surname}`)
   }
   people.forEach(allCars);
 }
@@ -191,7 +190,7 @@ console.groupCollapsed('13. Suformuokite žmonių masyvą  iš objektų, kuriuos
 
   newArray = newArray.map((e) =>{
     return{
-    surname: e.name + ' ' + e.surname,
+    fullname: e.name + ' ' + e.surname,
     sex: e.sex,
     age: e.age,
     salary: e.income,
