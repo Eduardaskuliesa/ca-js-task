@@ -1,9 +1,12 @@
+
 console.group("1. Sukurkite funkciją, kuri atspausdiną tekstą didžiosiomis raidėmis");
-{
+{ 
+  const str = 'asadbvas'
   // Funkcijos deklaravimas
   function printCapital(str) {
-    // code ...
+    return str.toUpperCase()
   }
+  console.log(printCapital(str))
   // console.log('---');
   // console.log("abcd");
   // printCapital("abcd");
@@ -18,10 +21,12 @@ console.log();
 
 console.group("2. Sukurkite funkciją, kuri atspausdina tekstą mažosiomis raidėmis");
 {
+  const str = 'ASSADSAD'
   // Funkcijos deklaravimas
   function printLower(str) {
-    // code ...
+    return str.toLowerCase()
   }
+  console.log(printLower(str));
   // console.log('---');
   // console.log("ABCD");
   // printLower("abcd");
@@ -36,10 +41,14 @@ console.log();
 
 console.group("3. Sukurkite funkciją, kuri atspausdina pirmojo parametro pirmają raidę");
 {
+  const sentence = 'Rokas , Tadas'
   // Funkcijos deklaravimas
   function printFirstLetter(str) {
-    // code ...
+    return str.charAt(0)
+
   }
+  console.log(printFirstLetter(sentence))
+  
   // console.log('---');
   // console.log("ABCD");
   // printFirstLetter("abcd");
@@ -54,25 +63,33 @@ console.log();
 
 console.group("4. Sukurkite funkciją, kuri atspausdina pirmojo parametro paskutinę raidę");
 {
+  const sentence = 'Rokas , Tadas'
   // Funkcijos deklaravimas
   function printLastLetter(str) {
-    // code ...
+    return str.charAt(str.length -1)
   }
   // console.log('---');
   // printLastLetter('Labas');
   // printLastLetter('Ate');
   // printLastLetter('Brieda');
   // console.log('---');
+  console.log(printLastLetter(sentence))
 }
 console.groupEnd();
 console.log();
 
 console.group("5. Sukurkite funkciją, kuri atspausdina pirmojo parametro viduriniają raidę");
 {
+  const sentence = 'Labas'
   // Funkcijos deklaravimas
   function printMiddleLetter(str) {
-    // code ...
+    if(str.length % 2 ===- 0){
+      return str.charAt(str.length / 2 -1) + str.charAt(str.length / 2 );
+    }else{
+      return str.charAt(str.length / 2);
+    };
   }
+  console.log(printMiddleLetter(sentence))
   // console.log('---');
   // printMiddleLetter('Labas');
   // printMiddleLetter('Ate');
@@ -84,9 +101,11 @@ console.log();
 
 console.group("6. Sukurkite funkciją, kuri grąžina simbolių darinio raidžių skaičių");
 {
+  const sentence = 'Labas'
   function getDoubleLetterCount(str) {
-    // code ...
+    return `${str} : ${str.length}`;
   }
+  console.log(getDoubleLetterCount(sentence))
   // console.log('---');
   // console.log({
   //   'labas': getDoubleLetterCount('labas'),
@@ -100,9 +119,11 @@ console.log();
 
 console.group("7. Sukurkite funkciją, kuri grąžina simbolių darinio raidžių skaičių padaugintą iš dviejų");
 {
+  const sentence = 'Labas'
   function getDoubleLetterCount(str) {
-    // code ...
+    return `${str} : ${str.length * 2}`
   }
+  console.log(getDoubleLetterCount(sentence))
   // console.log('---');
   // console.log({
   //   'labas': getDoubleLetterCount('labas'),
@@ -115,9 +136,11 @@ console.groupEnd();
 console.log();
 
 console.group("8. Sukurkite funkciją, kuri grąžina pirmo ir antro parametro bendrą simbolių skaičių");
-{
+{ 
+  const a = 'Labas'
+  const b = 'Vakaras'
   function getArgsLetterSum(a, b) {
-    // code ...
+    return a.length + b.length
   }
   // console.log('---');
   // console.log({
@@ -126,15 +149,23 @@ console.group("8. Sukurkite funkciją, kuri grąžina pirmo ir antro parametro b
   //   'kebabas, kefyras': getArgsLetterSum('kebabas', 'kefyras'),
   // })
   // console.log('---');
+  console.log(getArgsLetterSum(a, b))
 }
 console.groupEnd();
 console.log();
 
 console.group("9. Sukurkite funkciją, kuri grąžina <true>, jeigu žodyje yra 'a' raidė, priešingu atveju <false>");
 {
+  const sentence = 'Debesys'
   function containsLetterA(str) {
-    // code ...
+    for (let i = 0; i < str.length; i++) {
+      if(str.charAt(i) === 'a'){
+        return true;
+      }
+    }
+    return false;
   }
+  console.log(containsLetterA(sentence))
   // console.log('---');
   // console.log({
   //   'labas': containsLetterA('labas'),
@@ -149,15 +180,25 @@ console.log();
 console.group("10. Sukurkite funkciją, kuri grąžina <true>, jeigu žodyje yra 2 parametru perduoda raidė, priešingu atveju false");
 {
   function containsLetter(str, letter) {
-    // code ...
+    let counter = 0;
+    for (let i = 0; i < str.length; i++) {
+      if(str.charAt(i) === letter){
+        counter ++;
+      }
+    }
+    if(counter === 2){
+      return true;
+    };
+    return false;
   }
-  // console.log('---');
-  // console.log({
-  //   'labas, a': containsLetter('labas', 'a'),
-  //   'kempė, a': containsLetter('kempė', 'a'),
-  //   'Finakolė, u': containsLetter('Finakolė', 'u'),
-  // })
-  // console.log('---');
+   console.log('---');
+   console.log({
+     'labas, a': containsLetter('labas', 'a'),
+     'kempė, a': containsLetter('kempė', 'a'),
+     'Finakolė, u': containsLetter('Finakolė', 'u'),
+   })
+   console.log('---');
+  
 }
 console.groupEnd();
 console.log();
