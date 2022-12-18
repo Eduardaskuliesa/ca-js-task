@@ -203,49 +203,70 @@ console.groupEnd();
 
 console.groupCollapsed('1. Atspausdinti visus Informatikos fakulteto studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const faculty = students.filter(({faculty}) => faculty === 'Informatikos fakultetas');
+  console.log(faculty);
+
 }
 console.groupEnd();
 
 console.groupCollapsed('2. Atspausdinti visus Chemijos fakulteto studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const faculty = students.filter(({faculty}) => faculty === 'Chemijos fakultetas');
+  console.log(faculty);
 }
 console.groupEnd();
 
 console.groupCollapsed('3. Atspausdinti visus Elektros ir elektronikos fakulteto studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const faculty = students.filter(({faculty}) => faculty === 'Elektros ir elektronikos fakultetas');
+  console.log(faculty);
 }
 console.groupEnd();
 
 console.groupCollapsed('4. Atspausdinti tik pirmo kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const faculty = students.filter(({course}) => course === 1);
+  console.log(faculty);
 }
 console.groupEnd();
 
 console.groupCollapsed('5. Atspausdinti tik antro kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const faculty = students.filter(({course}) => course === 2);
+  console.log(faculty);
 }
 console.groupEnd();
 
 console.groupCollapsed('6. Atspausdinti tik trečio kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const faculty = students.filter(({course}) => course === 3);
+  console.log('nera tokiu alio')
 }
 console.groupEnd();
 
 console.groupCollapsed('7. Atspausdinti tik ketvirto kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const faculty = students.filter(({course}) => course === 4);
+  console.log('nera tokiu alio');
 }
 console.groupEnd();
 
 console.groupCollapsed('8. Iš students masyvo atrinkti ir atspausdinti visų studentų vidurkius');
 {
-  // ... sprendimas ir spausdinimas
+  const vidurkis = students.map(({modules})  => modules.map(({marks}) =>{
+    return marks;
+  }));
+ for (let i = 0; i < vidurkis.length; i++) {
+  for (let j = 0; j < vidurkis[i].length; j++) {
+    let sum  = 0;
+    let skaicus = vidurkis[j].length;
+    for (let k = 0; k < vidurkis[j].length; k++) { 
+      sum += Number(vidurkis[k]);
+    }
+    console.log();
+  }
+ }
+  
 }
 
 console.groupCollapsed('9. Atspausdinti visų Informatikos fakulteto studentų vidurkius');

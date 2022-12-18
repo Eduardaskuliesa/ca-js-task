@@ -555,18 +555,15 @@ console.log();
 console.group("27. Sukurkite funkciją, kuri pirmu parametru priima sakinį, ir kiekvieno žodžio pirmają raidę padaro didžiąja");
 {
   function capitalize(str) {
-    const wordToUpper = str.split(' ')
-     return wordToUpper.map((wordToUpper) => {
-      return wordToUpper[0].toUpperCase() + wordToUpper.substring(1);
-    }).join(' ')
+    // code ...
   }
-   console.log('---');
-   console.log({
-     'viens du trys': capitalize('viens du trys'),
-     'as tave myliu': capitalize('as tave myliu'),
-     'Bairis seniuk': capitalize('Bairis seniuk'),
-   })
-   console.log('---');
+  // console.log('---');
+  // console.log({
+  //   'viens du trys': capitalize('viens du trys'),
+  //   'as tave myliu': capitalize('as tave myliu'),
+  //   'Bairis seniuk': capitalize('Bairis seniuk'),
+  // })
+  // console.log('---');
 }
 console.groupEnd();
 console.log();
@@ -574,16 +571,13 @@ console.log();
 console.group("28. Sukurkite funkciją, kuri atspausdina žodį atvirkščiai 'abc' -> 'cba'");
 {
   function strReverse(str) {
-     return str.split("").reverse().join("");
+    // code ...
   }
-   console.log('---');
-   console.log({
-    'viens du trys': strReverse('viens du trys'),
-    'as tave myliu': strReverse('as tave myliu'),
-    'Bairis seniuk': strReverse('Bairis seniuk'),
-   })
-   
-   console.log('---');
+  // console.log('---');
+  // strReverse('viens du trys');
+  // strReverse('as tave myliu');
+  // strReverse('Bairis seniuk');
+  // console.log('---');
 }
 console.groupEnd();
 console.log();
@@ -597,20 +591,23 @@ console.log();
 console.group("29. Sukurkite funkciją, kuri grąžina <true>, jeigu žodis yra palindromas (taip pat skaitosi iš abiejų pusių)");
 {
   function isPalyndrome(str) {
-    const reversedWord = str.split('').reverse().join('')
-    if(reversedWord === str){
-      return true
+    let i = 0;
+    let k = str.length - 1;
+    while (i < k) {
+      if (str[i] !== str[k]) return false;
+      i++;
+      k--;
     }
-    return false
+    return true;
   }
-   console.log('---');
-   console.log({
-     'mama': isPalyndrome('mama'),
-     'mamam': isPalyndrome('mamam'),
-     '123321': isPalyndrome('123321'),
-     '123456': isPalyndrome('123456'),
-   })
-   console.log('---');
+  // console.log('---');
+  // console.log({
+  //   'mama': isPalyndrome('mama'),
+  //   'mamam': isPalyndrome('mamam'),
+  //   '123321': isPalyndrome('123321'),
+  //   '123456': isPalyndrome('123456'),
+  // })
+  // console.log('---');
 }
 console.groupEnd();
 console.log();
@@ -624,11 +621,10 @@ console.group("30. Sukurkite funkciją, kuri taiso pastraipos klaidas");
 {
 
   function capitalizeFirstLetter(str) {
-    return str[0].toUpperCase;
+    // code ...
   }
 
   function splitIntoSentences(paragraph) {
-
     /*
       2.1 Atskirti pagal sakinio baigimo ženklus ir juos įsiminti
       2.2 Pašalinti tuščius tarpus iš kairės ir dešinės
@@ -673,14 +669,14 @@ console.log();
 console.group("31. Sukurkite funkciją, kuri pirmu parametru priima sakinį ir sudeda atskirus sakinio žodžius į masyvą");
 {
   function splitSentence(sentence) {
-    return sentence.split(' ')
+    // code ...
   }
-   console.log('---');
-   console.log({
-     'Labas aš Jonas': splitSentence('Labas aš Jonas'),
-     'Kėgliai yra gerai': splitSentence('Kėgliai yra gerai'),
-   })
-   console.log('---');
+  // console.log('---');
+  // console.log({
+  //   'Labas aš Jonas': splitSentence('Labas aš Jonas'),
+  //   'Kėgliai yra gerai': splitSentence('Kėgliai yra gerai'),
+  // })
+  // console.log('---');
 }
 console.groupEnd();
 console.log();
@@ -693,17 +689,14 @@ console.log();
 console.group("32. Sukurkite funkciją, kuri pirmu parametru priimą <string>'ą, o antruoju skiriklį");
 {
   function explode(str, separator) {
-    for (let i = 0; i < str.length; i++) {
-      str = str.replaceAll(separator,' ');
-    }
-    return str.split(' ');
+    // code ...
   }
-   console.log('---');
-   console.log({
-     "'Man patinka sniegas', ' '": explode('Man patinka sniegas', ' '),
-     "'home/about/13', '/'": explode('home/about/13', '/'),
-   })
-   console.log('---');
+  // console.log('---');
+  // console.log({
+  //   "'Man patinka sniegas', ' '": explode('Man patinka sniegas', ' '),
+  //   "'home/about/13', '/'": explode('home/about/13', '/'),
+  // })
+  // console.log('---');
 }
 console.groupEnd();
 console.log();
