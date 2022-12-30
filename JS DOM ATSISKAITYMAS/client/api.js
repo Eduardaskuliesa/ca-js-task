@@ -1,6 +1,6 @@
 const API = {
     async getItems(){
-        try{
+        try {
          const respons = await fetch('http://localhost:5000/items') ;
          const items = await respons.json();
 

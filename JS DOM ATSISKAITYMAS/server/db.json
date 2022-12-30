@@ -1,9 +1,9 @@
 {
     "items":[
-        {"id": "1", "title": "Pavadinimas 1", "done": true},
-        {"id": "2", "title": "Pavadinimas 2", "done": false},
-        {"id": "3", "title": "Pavadinimas 3", "done": false},
-        {"id": "4", "title": "Pavadinimas 4", "done": true},
-        {"id": "5", "title": "Pavadinimas 5", "done": true}
+        {"brand": "BMW", "module": "3 series", "inStock": true, "price": 40000},
+        {"brand": "BMW", "module": "5 series", "inStock": false, "price": 68000},
+        {"brand": "Porche", "module": "911 GT", "inStock": false, "price": 130000},
+        {"brand": "Porche", "module": "Taycan", "inStock": true, "price": 108000},
+        {"brand": "Rolls Royce", "module": "Phantom", "inStock": true, "price": 480000}
     ]
 }
