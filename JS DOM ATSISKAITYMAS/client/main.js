@@ -27,4 +27,5 @@ API.getItems()
     rootHtmlElelement.append(
         container.htmlElement,
     );
-});  
+})
+.catch(alert);
