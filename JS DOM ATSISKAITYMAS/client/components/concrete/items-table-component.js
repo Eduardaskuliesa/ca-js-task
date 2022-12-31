@@ -25,7 +25,7 @@ class ItemsTableComponent {
     }
 
 
-    createRow({id, brand, module, inStock, price}){
+    createRow = ({id, brand, module, inStock, price})=> {
       const tr = document.createElement('tr');
       tr.innerHTML= `
         <td>${id}</td>
@@ -36,15 +36,23 @@ class ItemsTableComponent {
         <td class= "d-flex justify-content-end">
           <button class= "btn btn-danger">X</button>     
         </td>`;
-
-
-      const delButton = tr.querySelector('.btn-danger');
-      delButton.addEventListener('click', async () => {
-        await API.deletItem(id);
-        const items = await API.getItems();
-      })
+        const handleDelet = async () => {
+          try{
+            await API.deletItem({ id, title });
+          }catch(error){
+            alert(error)
+          } finally{
+            const items = await API.getItems();
+            const tbody = this.htmlElement.querySelector('tbody');
+            const rowsHtmlElements = items.map(this.createRow);
+            tbody.innerHTML = null;
+            tbody.append(...rowsHtmlElements);
+          }
+        }
       
-      return tr;   
+      const delButton = tr.querySelector('.btn-danger');
+      delButton.addEventListener('click', handleDelet)
+      return tr;
     }
 }
 export default ItemsTableComponent
