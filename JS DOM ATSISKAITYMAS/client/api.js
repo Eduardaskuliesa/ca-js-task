@@ -4,9 +4,9 @@ const API = {
          const respons = await fetch('http://localhost:5000/items') ;
          const items = await respons.json();
 
-         return items;
+          return items;
         } catch(error){
-         return error;
+          return error;
         }
     }
 }
