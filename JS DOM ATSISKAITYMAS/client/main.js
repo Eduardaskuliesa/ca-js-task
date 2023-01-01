@@ -3,6 +3,7 @@ import TodoTableComponent from './components/concrete/todo-table-component.js';
 import ContainerComponent from './components/wrappers/container-component.js';
 import HeaderComponents from './components/concrete/header-components.js';
 import TodoFormComponents from './components/concrete/todo-form-components.js';
+import FlexContainer from './components/wrappers/flex-component.js';
 
 
 const rootHtmlElelement = document.querySelector('#root')
@@ -14,16 +15,16 @@ API.getItems()
         text: 'Car saloon',
         className: 'text-center my-4'
     });
-    const todoFormComponents = new TodoFormComponents({});
-    
-        
-
-
+    const todoFormComponents = new TodoFormComponents();
     const container = new ContainerComponent({
         children: [
-            headerComponent.htmlElement,
-            todoTableComponent.htmlElement,
-            todoFormComponents.htmlElement,
+            headerComponent.htmlElement, 
+            new FlexContainer({
+                children : [
+                    todoTableComponent.htmlElement,
+                    todoFormComponents.htmlElement,
+                ]
+            }).htmlElement
         ],
     });
         
