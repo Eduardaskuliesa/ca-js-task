@@ -38,11 +38,11 @@ class TodoTableComponent {
         </td>`;
         const handleDelet = async () => {
           try{
-            await API.deletItem({ id });
+            await API.deletTodo({ id });
           }catch(error){
             alert(error)
           } finally{
-            const items = await API.getItems();
+            const items = await API.getTodos();
             const tbody = this.htmlElement.querySelector('tbody');
             const rowsHtmlElements = items.map(this.createRow);
             tbody.innerHTML = null;

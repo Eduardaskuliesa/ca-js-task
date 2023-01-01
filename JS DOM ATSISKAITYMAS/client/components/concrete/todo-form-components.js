@@ -1,3 +1,5 @@
+import API from "../../api.js";
+
 class TodoFormComponents {
     htmlElement;
 
@@ -24,16 +26,16 @@ class TodoFormComponents {
         </div>
         <button type="submit" class="btn btn-primary w-100">Yeah</button>`;
 
-        this.htmlElement.addEventListener('submit' , (event) => {
+        this.htmlElement.addEventListener('submit' , async (event) => {
             event.preventDefault();
 
-            const formData = new FormData(event.target );
+            const formData = new FormData(event.target);
             const brand = formData.get('brand');
             const module = formData.get('module');
             const price = formData.get('price');
             const instock = formData.get('instock') === 'on';
 
-            const dataForTodoCreation = {brand, instock, module, price}
+            await API.createTodo({brand, instock, module, price});
                 
 
             console.log(dataForTodoCreation);

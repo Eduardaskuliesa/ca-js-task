@@ -8,7 +8,7 @@ import FlexContainer from './components/wrappers/flex-component.js';
 
 const rootHtmlElelement = document.querySelector('#root')
 
-API.getItems()
+API.getTodos()
 .then((items) => {
     const todoTableComponent = new TodoTableComponent({items});
     const headerComponent = new HeaderComponents({

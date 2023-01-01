@@ -3,7 +3,7 @@ const formatError = (error) => {
 }
 
 const API = {
-    async getItems(){
+    async getTodos(){
         try {
          const respons = await fetch('http://localhost:5000/items') ;
          const items = await respons.json();
@@ -13,7 +13,7 @@ const API = {
          throw formatError(error);
         }
       },
-      async deletItem({ id, title }){
+      async deletTodo({ id, title }){
         try {
           const respons = await fetch(`http://localhost:5000/items/${id}`,{
             method: 'DELETE',
@@ -28,6 +28,22 @@ const API = {
          } catch(error){
           throw formatError(error);
          }
+      },
+      
+      async createTodo(todoData){
+        try{
+          const respons = await fetch(`http://localhost:5000/items`,{
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({todoData})
+          })
+
+        }catch(error){
+          throw formatError(error)
+        }
 
       }
 };
