@@ -38,7 +38,7 @@ class ItemsTableComponent {
         </td>`;
         const handleDelet = async () => {
           try{
-            await API.deletItem({ id, title });
+            await API.deletItem({ id });
           }catch(error){
             alert(error)
           } finally{

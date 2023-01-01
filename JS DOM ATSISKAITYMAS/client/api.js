@@ -11,7 +11,7 @@ const API = {
           return items;
         } catch(error){
          throw formatError(error);
-         }
+        }
       },
       async deletItem({ id, title }){
         try {
