@@ -10,7 +10,7 @@ API.getItems()
 .then((items) => {
     const itemsTableComponent = new ItemsTableComponent({items});
     const headerComponent = new HeaderComponents({
-        text: 'Masinu salonas',
+        text: 'Car saloon',
         className: 'text-center my-4'
     })
         
