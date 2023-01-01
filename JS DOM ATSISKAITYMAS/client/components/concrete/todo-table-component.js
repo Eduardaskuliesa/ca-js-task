@@ -1,6 +1,6 @@
 import API from "../../api.js";
 
-class ItemsTableComponent {
+class TodoTableComponent {
     htmlElement;
 
     constructor({items}){
@@ -55,4 +55,4 @@ class ItemsTableComponent {
       return tr;
     }
 }
-export default ItemsTableComponent
+export default TodoTableComponent

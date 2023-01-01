@@ -1,25 +1,29 @@
 import API from './api.js';
-import ItemsTableComponent from './components/concrete/items-table-component.js';
+import TodoTableComponent from './components/concrete/todo-table-component.js';
 import ContainerComponent from './components/wrappers/container-component.js';
 import HeaderComponents from './components/concrete/header-components.js';
+import TodoFormComponents from './components/concrete/todo-form-components.js';
 
 
 const rootHtmlElelement = document.querySelector('#root')
 
 API.getItems()
 .then((items) => {
-    const itemsTableComponent = new ItemsTableComponent({items});
+    const todoTableComponent = new TodoTableComponent({items});
     const headerComponent = new HeaderComponents({
         text: 'Car saloon',
         className: 'text-center my-4'
-    })
+    });
+    const todoFormComponents = new TodoFormComponents({});
+    
         
 
 
     const container = new ContainerComponent({
         children: [
             headerComponent.htmlElement,
-            itemsTableComponent.htmlElement,
+            todoTableComponent.htmlElement,
+            todoFormComponents.htmlElement,
         ],
     });
         
