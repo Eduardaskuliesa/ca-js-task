@@ -3,7 +3,7 @@ import API from "../../api.js";
 class TodoFormComponents {
     htmlElement;
 
-    constructor(){
+    constructor({onSubmit}){
         this.htmlElement = document.createElement(`form`);
         this.htmlElement.className  = 'todo-form shadow p-4'
         this.htmlElement.innerHTML = `
@@ -35,7 +35,8 @@ class TodoFormComponents {
             const price = formData.get('price');
             const instock = formData.get('instock') === 'on';
 
-            await API.createTodo({brand, instock, module, price});
+            onSubmit({brand, module, price, instock});
+            
                 
 
             console.log(dataForTodoCreation);

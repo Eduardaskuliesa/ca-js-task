@@ -2,8 +2,10 @@ import API from "../../api.js";
 
 class TodoTableComponent {
     htmlElement;
+    handleDelet;
+    tbodyHtmlElement;
 
-    constructor({items}){
+    constructor({todos, handleDelet}){
         this.htmlElement = document.createElement('table')
         this.htmlElement.className = 'table table-striped shadow'
         this.htmlElement.innerHTML = `
@@ -12,47 +14,39 @@ class TodoTableComponent {
             <th>ID</th>
             <th>Brand</th>
             <th>Module</th>
-            <th>InStock</th>
             <th>Price in USD</th>
+            <th>In stock</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody></tbody>`;
-
-       const tbody = this.htmlElement.querySelector('tbody');
-       const rowsHtmlElements = items.map(this.createRow);
-       tbody.append(...rowsHtmlElements);
+        this.handleDelet = handleDelet;
+        this.tbodyHtmlElement = this.htmlElement.querySelector('tbody');
+        this.renderTodos(todos);
     }
 
 
-    createRow = ({id, brand, module, inStock, price})=> {
+    createRow = ({id, brand, module, instock, price})=> {
       const tr = document.createElement('tr');
       tr.innerHTML= `
         <td>${id}</td>
         <td>${brand}</td>
         <td>${module}</td>
-        <td>${inStock ? 'Yes' : 'No'}</td>
         <td>${price}</td>
-        <td class= "d-flex justify-content-end">
+        <td>${instock ? 'Yes' : 'No'}</td>
+        <td class= "">
           <button class= "btn btn-danger">X</button>     
         </td>`;
-        const handleDelet = async () => {
-          try{
-            await API.deletTodo({ id });
-          }catch(error){
-            alert(error)
-          } finally{
-            const items = await API.getTodos();
-            const tbody = this.htmlElement.querySelector('tbody');
-            const rowsHtmlElements = items.map(this.createRow);
-            tbody.innerHTML = null;
-            tbody.append(...rowsHtmlElements);
-          }
-        }
+        
       
       const delButton = tr.querySelector('.btn-danger');
-      delButton.addEventListener('click', handleDelet)
+      delButton.addEventListener('click', () => this.handleDelet({id, brand, module, inStock, price}))
       return tr;
+    }
+    renderTodos = (todos) => {
+       this.tbodyHtmlElement.innerHTML = null;
+       const rowsHtmlElements = todos.map(this.createRow);
+       this.tbodyHtmlElement.append(...rowsHtmlElements);
     }
 }
 export default TodoTableComponent

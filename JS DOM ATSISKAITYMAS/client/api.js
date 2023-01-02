@@ -38,8 +38,12 @@ const API = {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
           },
-          body: JSON.stringify({todoData})
-          })
+          body: JSON.stringify(todoData)
+          });
+
+          if(respons.status === 404){
+            throw new Error(`Faild to create new Todo`)
+          }
 
         }catch(error){
           throw formatError(error)

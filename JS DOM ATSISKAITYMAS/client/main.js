@@ -6,16 +6,40 @@ import TodoFormComponents from './components/concrete/todo-form-components.js';
 import FlexContainer from './components/wrappers/flex-component.js';
 
 
-const rootHtmlElelement = document.querySelector('#root')
+const rootHtmlElelement = document.querySelector('#root');
+
+let todoTableComponent;
+let todoFormComponents;
+
+const handleDelet = async ({id, brand, module, price, instock}) => {
+    try{
+      await API.deletTodo({id, brand, module, price, instock});
+    }catch(error){
+      alert(error)
+    } finally{
+      const todos = await API.getTodos();
+      todoTableComponent.renderTodos(todos);
+    }
+  }
+  const onCreateTodo = async ({brand, price , module, instock}) => {
+    try{
+      await API.createTodo({brand, price, module, instock});
+    }catch(error){
+      alert(error)
+    } finally{
+      const todos = await API.getTodos();
+      todoTableComponent.renderTodos(todos);
+    }
+  }
 
 API.getTodos()
-.then((items) => {
-    const todoTableComponent = new TodoTableComponent({items});
+.then((todos) => {
+    todoTableComponent = new TodoTableComponent({ todos, handleDelet} );
     const headerComponent = new HeaderComponents({
         text: 'Car saloon',
         className: 'text-center my-4'
     });
-    const todoFormComponents = new TodoFormComponents();
+    todoFormComponents = new TodoFormComponents({onSubmit: onCreateTodo})
     const container = new ContainerComponent({
         children: [
             headerComponent.htmlElement, 
