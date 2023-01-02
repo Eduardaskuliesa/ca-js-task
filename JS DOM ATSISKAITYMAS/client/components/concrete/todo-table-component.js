@@ -40,7 +40,7 @@ class TodoTableComponent {
         
       
       const delButton = tr.querySelector('.btn-danger');
-      delButton.addEventListener('click', () => this.handleDelet({id, brand, module, inStock, price}))
+      delButton.addEventListener('click', () => this.handleDelet({id, brand, module, instock, price}))
       return tr;
     }
     renderTodos = (todos) => {
