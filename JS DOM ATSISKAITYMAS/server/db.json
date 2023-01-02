@@ -1,39 +1,9 @@
 {
-  "items": [
-    {
-      "id": "1",
-      "brand": "BMW",
-      "module": "3 series",
-      "instock": true,
-      "price": 40000
-    },
-    {
-      "brand": "BWM",
-      "price": "1000000",
-      "module": "x5",
-      "instock": true,
-      "id": "23lBYdT"
-    },
-    {
-      "brand": "",
-      "price": "",
-      "module": "",
-      "instock": false,
-      "id": "bGxhtH2"
-    },
-    {
-      "brand": "",
-      "price": "",
-      "module": "",
-      "instock": false,
-      "id": "7ZmCvg7"
-    },
-    {
-      "brand": "",
-      "price": "",
-      "module": "",
-      "instock": false,
-      "id": "bGWxaUl"
-    }
+  "items":[
+      {"id": "1", "brand": "BMW", "module": "3 series", "instock": true, "price": 40000},
+      {"id": "2", "brand": "BMW", "module": "5 series", "instock": false, "price": 68000},
+      {"id": "3", "brand": "Porche", "module": "911 GT", "instock": false, "price": 130000},
+      {"id": "4", "brand": "Porche", "module": "Taycan", "instock": true, "price": 108000},
+      {"id": "5", "brand": "Rolls Royce", "module": "Phantom", "instock": true, "price": 480000}
   ]
 }
